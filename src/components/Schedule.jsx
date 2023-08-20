@@ -10,11 +10,17 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import { driverData, vehicleData } from "../constants";
 import Navbar from "./Navbar";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const Schedule = () => {
+
+  const myUuid = uuidv4();
+
+
 const [events, setEvents] = useState([
     {
+      id:{myUuid},
       driverName: 'Wisdom Ademola',
       clientName: 'Clinton',
       companyName: 'British Petroleum',
@@ -26,6 +32,7 @@ const [events, setEvents] = useState([
       },
   ])
   const [newEvent, setNewEvent] = useState({
+    id: {myUuid},
     driverName: '',
     clientName: '',
     companyName: '',

@@ -32,8 +32,8 @@
 }
 .l-s-top-image{
   background-color: #f3f3f3;
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -111,10 +111,10 @@
 /* Right side */
 .right-side{
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem;
   background-color: rgb(232, 232, 232);
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
 }
 /* Navbar */
 .navbar{
@@ -139,6 +139,7 @@
 .notify a{
   text-decoration: none;
   color: black;
+  font-size: 16px;
 }
 .notify-logo img{
   width: 100px;
@@ -166,16 +167,8 @@
 
 }
 .card-container{
-  /* background: linear-gradient(
-    to top,
-    #1D5D9B 0%,
-    #226eba 50%,
-    #226eba 50%,
-    #226eba 100%
-
-  ); */
   margin: 5px 0 5px 5px;
-  width: 145px;
+  width: 142px;
   height: 85px;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -263,7 +256,7 @@
   font-weight: bold;
 }
 .schedule .schedule-date{
-  height: 61vh;
+  height: 100vh;
   width: 400px;
   padding:  1rem;
 }
@@ -281,7 +274,7 @@
   flex: 3;
   background-color: #fffcfc;
   border-radius: 12px;
-  height: 61vh;
+  height: 100vh;
 }
 .schedule-bottom-left{
   border: 1px solid #8c8c8c;
@@ -401,4 +394,111 @@
   justify-content: center;
   align-items: center;
   color: #8c8c8c;
+}
+.doc h1{
+  font-size: 19px;
+  font-weight: bold;
+}
+.doc h3{
+  font-size: 16px;
+  font-weight: bold;
+}
+.doc h5{
+  font-size: 16px;
+  font-weight: bold;
+}
+@media screen and (max-width: 1500px) {
+  .card-container{
+    margin: 5px 0 5px 5px;
+    width: 120px;
+    height: 85px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-container h1{
+    color: #f3f3f3;
+    font-size: 15px;
+  
+  }
+  .card-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .card-stuff{
+     background-color: white;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+  }
+  .card-stuff p{
+    padding: 4px;
+    margin: 0;
+    font-size: 8px;
+  }
+  .card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .card-text p{
+    padding: 0;
+    margin: 0;
+    font-size: 8px;
+    color: #f3f3f3;
+  }
+  .vehicleDescription{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #8c8c8c;
+    padding: 5px 4px;
+  }
+  .vehicleDescription img{
+    width: 80px;
+    height: 35px;
+    object-fit: cover;
+    margin-right: 4px;
+  }
+  .vehicleDescription h1{
+    font-size: 8px;
+    margin: 0;
+    width: 20px;
+    font-weight: bold;
+  }
+  .vehicleDescription p{
+    font-size: 8px;
+    margin: 0;
+  }
+  .schedule .schedule-date  .fc{
+    height: 250px;
+    overflow: hidden;
+  }
+  .schedule-title select{
+    width: 100px;
+    padding: 0.4rem 0.2rem;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .schedule{
+    margin-top: 2rem;
+    border: 1px solid grey;
+    padding: 1rem 0rem;
+    height: 100%;
+  }
+  .fc p{
+    margin-bottom: 0 !important;
+    font-size: 8px;
+    color: black !important;
+    font-weight: bold;
+  }
+
 }

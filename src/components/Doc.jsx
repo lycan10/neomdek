@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from './Navbar'
-
+import '../App.css'
 const Doc = () => {
   return (
     <div className='right-side'>
         <Navbar/>
-      <div style={{ overflow:'scroll', height:'100vh', padding:'1rem 2rem 2rem' }}>
+      <div className='doc' style={{ overflow:'scroll', height:'100vh', padding:'1rem 2rem 2rem' }}>
         <h1 style={{color:'#1a1a1a'}}>Documentation</h1>
         <p>Welcome to the documentation for the functional scheduling page designed for the transport team of a company. This page allows the manager to easily view and manage drivers' and vehicles' schedules at a glance. Below, you'll find an overview of the key features, components, and how to use the scheduling page effectively.</p>
         <h3>Table of content</h3>
