@@ -1,38 +1,404 @@
-.App {
-  text-align: center;
+.dashboard{
+  display: flex;
+  flex-direction: row;
+}
+.resizable-sidebar {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.resize-handle {
+  width: 5px;
+  cursor: col-resize;
+  background-color: rgb(227, 227, 227);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar {
+  background-color: #1D5D9B;
+  transition: width 0.1s ease;
+  overflow-y: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.l-s{
+  padding: 2rem;
+  border-bottom: 2px solid #f3f3f3;
+}
+.l-s-top{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  cursor: pointer;
+}
+.l-s-top-image{
+  background-color: #f3f3f3;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem ;
+}
+.l-s-top h1{
+  font-size: 23px;
+  color: white;
+}
+.l-s-top p{
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+}
+.dropdown-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.dropdown-content a{ 
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #f3f3f3;
+  padding-left: 0.5rem;
+}
+.l-s-bottom{
+  margin-top: 1.5rem;
+}
+.l-s-bottom h1{
+  font-size: 18px;
+  color: white;
+  margin: 0;
+}
+.content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 1rem;
+}
+.accordion-item a{
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #f3f3f3;
+  padding-left: 1rem;
+}
+.accordion-item {
+  background-color: transparent !important;
+  border: none;
+  
+}
+.accordion-button {
+  background-color: transparent !important;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.accordion-button::after {
+  background-image: url('./assets/caret-down.svg') !important;
+
+}
+.accordion-button:focus {
+  z-index: 3;
+  border-color: transparent !important;
+  outline: 0;
+  border: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.accordion-button:not(.collapsed) {
+  color: white;
+  box-shadow: none !important;
+}
+
+/* Right side */
+.right-side{
+  width: 100%;
+  padding: 0 2rem;
+  background-color: rgb(232, 232, 232);
+  height: 100vh;
+  overflow: hidden;
+}
+/* Navbar */
+.navbar{
+  width: 100%;
+}
+.navbar-search{
+  background-color: white;
+  padding: 6px;
+}
+.navbar-search input{
+  border: none;
+  outline: none;
+}
+.notify{
+  padding-left: 2rem;
+}
+.notify img{
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+}
+.notify a{
+  text-decoration: none;
+  color: black;
+}
+.notify-logo img{
+  width: 100px;
+  height: 60px;
+}
+/* Header */
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.header h1{
+  font-size: 23px;
+  color: #1D5D9B;
+  font-weight: 700;
+}
+.cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.card-container{
+  /* background: linear-gradient(
+    to top,
+    #1D5D9B 0%,
+    #226eba 50%,
+    #226eba 50%,
+    #226eba 100%
+
+  ); */
+  margin: 5px 0 5px 5px;
+  width: 145px;
+  height: 85px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-container h1{
+  color: #f3f3f3;
+  font-size: 16px;
+
+}
+.card-bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.card-stuff{
+   background-color: white;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.card-stuff p{
+  padding: 4px;
+  margin: 0;
+  font-size: 10px;
+}
+.card-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.card-text p{
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  color: #f3f3f3;
+}
+
+/* Schedule  */
+.schedule{
+  margin-top: 2rem;
+  border: 1px solid grey;
+  padding: 1rem;
+  height: 100%;
+}
+.schedule-top{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1rem 1rem;
+
+}
+.event-button{
+  margin-left: 2rem;
+}
+.event-button button{
+  border: none;
+  outline: none;
+  background-color: #1D5D9B;
+  font-size: 12px;
+  color: white;
+  padding: 0.35rem 0.7rem;
+}
+.schedule-title{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.schedule-title h1{
+  font-size: 16px;
+  margin: 0 1rem 0 0;
+  font-weight: bold;
+}
+.schedule-title select{
+  width: 150px;
+  padding: 0.4rem 0.2rem;
+  font-size: 12px;
+  font-weight: bold;
+}
+.schedule .schedule-date{
+  height: 61vh;
+  width: 400px;
+  padding:  1rem;
+}
+.schedule-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.schedule-bottom-description{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid #8c8c8c;
+  flex: 3;
+  background-color: #fffcfc;
+  border-radius: 12px;
+  height: 61vh;
+}
+.schedule-bottom-left{
+  border: 1px solid #8c8c8c;
+  height: 100%;
+  border-top-left-radius: 12px;
+}
+.schedule-bottom-left-title{
+  padding: 1rem;
+  border-top-left-radius: 12px;
+  border-bottom: 1px solid #8c8c8c;
+}
+.schedule-bottom-left-title h1{
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+/* Description */
+.vehicleDescription{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #8c8c8c;
+  padding: 5px 13px;
+}
+.vehicleDescription img{
+  width: 100px;
+  height: 55px;
+  object-fit: cover;
+  margin-right: 8px;
+}
+.vehicleDescription h1{
+  font-size: 14px;
+  margin: 0;
+  width: 30px;
+  font-weight: bold;
+}
+.vehicleDescription p{
+  font-size: 12px;
+  margin: 0;
+}
+
+.schedule-bottom-left{
+  width: 22%;
+}
+.schedule-bottom-right{
+  width: 78%;
+  padding: 1rem;
+  height: 61vh;
+}
+/* calendar */
+.schedule-bottom-right .fc{
+  height: 530px;
+}
+.schedule .schedule-date  .fc{
+  height: 280px;
+  overflow: hidden;
+}
+.fc .fc-toolbar-title {
+  font-size: 1rem;
+  margin: 0px;
+}
+.fc .fc-button {
+  font-size: 0.5rem;
+  font-weight: 400;
+}
+.schedule .schedule-date .fc .fc-daygrid-day-frame{
+  min-height: 0%;
+  height: 8px !important;
+  position: relative;
+}
+
+.fc .fc-daygrid-day-frame {
+  min-height: 0%;
+  height: 50px;
+  position: relative;
+}
+.fc p{
+  margin-bottom: 0 !important;
+  font-size: 9px;
+  color: black !important;
+  font-weight: bold;
+}
+.fc .fc-daygrid-day-top a {
+  color: black !important;
+  text-decoration: none;
+}
+.fc .fc-scrollgrid-sync-inner a {
+  color: black !important;
+  text-decoration: none;
+}
+.schedule .schedule-date .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+  display: none !important;
+}
+/* preview modal */
+.modal-schedule-bottom h4{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 1.3rem;
+}
+.modal-schedule-bottom span{
+  font-size: 16px;
+  font-weight: 200;
+  margin-left: 1rem;
+}
+
+.create-event{
+
+}
+.event-content{
+  margin: 1.5rem 1rem;
+}
+
+/* Empty page */
+.emptyPage{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8c8c8c;
 }
